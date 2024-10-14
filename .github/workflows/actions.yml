@@ -9,7 +9,7 @@ on:
     - cron: '30 5 * * 2'  # Every Tuesday at 5:30 AM
 
 jobs:
-  update_list_of_grants:
+  update_list_of_grants_and_create_an_issue:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # Required for pushing CSV results to the repository
@@ -48,13 +48,6 @@ jobs:
           git commit -m "Add parsing results for $(date +'%Y-%m-%d')"
           git push
 
-  create_issue:
-    name: Create team sync issue
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write  # Required for creating, closing, and pinning/unpinning issues
-    steps:
-
       - name: Create team sync issue
         run: |
           if [[ $CLOSE_PREVIOUS == true ]]; then
@@ -83,3 +76,5 @@ jobs:
           BODY: ""
           PINNED: false
           CLOSE_PREVIOUS: true
+
+      
