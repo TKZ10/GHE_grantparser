@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Check out repository with full history
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Fetch all history to avoid the "not a git repository" issue
 
       - name: Setup Python
         uses: actions/setup-python@v5
