@@ -75,6 +75,6 @@ jobs:
           LABELS: demo weekly sync
           BODY: ""
           PINNED: false
-          CLOSE_PREVIOUS: true
+          CLOSE_PREVIOUS: false
 
       
