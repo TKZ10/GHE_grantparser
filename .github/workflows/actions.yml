@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # Required for pushing CSV results to the repository
+      issues: write  
     steps:
       - name: Check out repository with full history
         uses: actions/checkout@v4
